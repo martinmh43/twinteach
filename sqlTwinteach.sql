@@ -70,10 +70,10 @@ CREATE TABLE Cursos {
 
 CREATE TABLE Usuarios {
     int id AUTO_INCREMENT primary key,
-    varchar nombre_apellidos,
-    varchar nick,
-    varchar contraseña,
-    varchar correo,
+    varchar nombre_apellidos (200),
+    varchar nick (50),
+    varchar contraseña (100),
+    varchar correo (50),
     varchar url_imagen
 };
 
@@ -101,7 +101,7 @@ CREATE TABLE InventariosUsuarios {
 
 CREATE TABLE Errores {
     int id AUTO_INCREMENT primary key,
-    varchar texto,
+    varchar texto (2000),
     datetime fecha
     int id_usuario,
     id_usuario FK Usuarios (id)
