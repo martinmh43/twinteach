@@ -33,11 +33,16 @@ CREATE TABLE Notificaciones {
 CREATE TABLE Tareas {
     int id AUTO_INCREMENT primary key,
     int cantidad,
-    datetime fecha
+    datetime fecha,
+    int id_usuario,
+    int id_curso,
+    id_usuario FK Usuarios (id),
+    id_curso FK Cursos (id)
 };
 
 CREATE TABLE Inventario {
     int id AUTO_INCREMENT primary key,
+    int id_curso,
     id_curso FK Cursos (id);
 };
 
@@ -66,11 +71,16 @@ CREATE TABLE Usuarios {
 };
 
 CREATE TABLE CursosUsuarios {
-
-}
+    int id_usuario,
+    int id_curso,
+    id_usuario FK Usuarios (id),
+    id_curso FK Cursos (id)
+};
 
 CREATE TABLE Errores {
     int id AUTO_INCREMENT primary key,
     varchar texto,
     datetime fecha
+    int id_usuario,
+    id_usuario FK Usuarios (id)
 };
