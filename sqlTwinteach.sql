@@ -1,8 +1,8 @@
 CREATE TABLE Ranking {
     int id AUTO_INCREMENT primary key,
-    varchar Nombre (200),
+    varchar Nombre,
     int num_participantes,
-    date fecha_creacion,
+    datetime fecha_creacion,
     int id_curso,
     id_curso FK Cursos (id)
 };
@@ -12,28 +12,30 @@ CREATE TABLE Mapa {
     int col,
     (row, col) primary key,
     int id_propietario,
-    id_propietario FK Usuarios (id),
-    varchar tipo_terreno
+    varchar tipo_terreno,
+    id_propietario FK Alumnos(id)
 };
 
 CREATE TABLE Softskill {
     int id AUTO_INCREMENT primary key,
-    varchar nombre (200),
-    date fehca_envio,
+    varchar nombre,
+    datetime fehca_envio,
     int puntos,
     int id_alumno_envia,
     int id_alumno_recive,
-    id_alumno_envia FK Cursos (id),
-    id_alumno_recive FK Cursos (id)
+    int id_curso,
+    id_alumno_envia FK Alumnos (id),
+    id_alumno_recive FK Alumnos (id),
+    id_curso FK Cursos (id)
 };
 
 CREATE TABLE Notificaciones {
     int id AUTO_INCREMENT primary key,
     varchar titulo,
     varchar url_imagen,
-    date fecha,
+    datetime fecha,
     int id_alumno_recive,
-    id_alumno_recive FK Usuarios (id),
+    id_alumno_recive FK Alumnos (id),
     int id_curso,
     id_curso FK Cursos (id);
 };
@@ -41,7 +43,7 @@ CREATE TABLE Notificaciones {
 CREATE TABLE Tareas {
     int id AUTO_INCREMENT primary key,
     int cantidad,
-    date fecha,
+    datetime fecha,
     int id_usuario,
     int id_curso,
     id_usuario FK Usuarios (id),
@@ -57,8 +59,8 @@ CREATE TABLE Inventario {
 CREATE TABLE Objetos {
     int id AUTO_INCREMENT primary key,
     int cantidad,
-    date fecha_creacion,
-    date fecha_modificacion,
+    datetime fecha_creacion,
+    datetime fecha_modificacion,
     int id_inventario,
     id_inventario FK Inventario (id_inventario)
 }; 
@@ -66,10 +68,19 @@ CREATE TABLE Objetos {
 CREATE TABLE Cursos {
     int id AUTO_INCREMENT primary key,
     varchar url_imagen,
-    date fecha_creacion
+    datetime fecha_creacion
 };
 
-CREATE TABLE Usuarios {
+CREATE TABLE Alumnos {
+    int id AUTO_INCREMENT primary key,
+    varchar nombre_apellidos (200),
+    varchar nick (50),
+    varchar contraseña (100),
+    varchar correo (50),
+    varchar url_imagen
+};
+
+CREATE TABLE Profesores {
     int id AUTO_INCREMENT primary key,
     varchar nombre_apellidos (200),
     varchar nick (50),
@@ -103,7 +114,7 @@ CREATE TABLE InventariosUsuarios {
 CREATE TABLE Errores {
     int id AUTO_INCREMENT primary key,
     varchar texto (2000),
-    date fecha
+    datetime fecha
     int id_usuario,
     id_usuario FK Usuarios (id)
 };
