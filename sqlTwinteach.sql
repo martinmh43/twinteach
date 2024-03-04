@@ -89,13 +89,27 @@ CREATE TABLE Profesores {
     varchar url_imagen
 };
 
-CREATE TABLE CursosUsuarios {
-    int id_usuario,
+CREATE TABLE CursosAlumnos {
+    int id_Alumno,
     int id_curso,
-    id_usuario FK Usuarios (id),
+    id_usuario FK Alumnos (id),
     id_curso FK Cursos (id),
-    int matricular default(0)
+    int matricular default(0),
+    PRIMARY(id_Alumno, id_curso)
 };
+
+CREATE TABLE CursosProfesores {
+    int id_Profesor,
+    int id_curso,
+    int matricular default(0),
+    id_Profesor FK Profesores (id),
+    id_curso Fk Cursos (id),
+    PRIMARY(id_Profesor, id_curso)
+}
+
+CREATE TABLE Administrador {
+    
+}
 
 CREATE TABLE CursosInventarios {
     int id_curso,
