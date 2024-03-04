@@ -1,16 +1,34 @@
 CREATE TABLE Ranking {
     int id AUTO_INCREMENT primary key,
     varchar Nombre,
-    int num_participantes,
     datetime fecha_creacion,
     int id_curso,
     id_curso FK Cursos (id)
 };
 
-CREATE TABLE Mapa {
-    int row,
-    int col,
-    (row, col) primary key,
+CREATE TABLE Tareas {
+    int id AUTO_INCREMENT primary key,
+    int cantidad,
+    datetime fecha,
+    int id_ranking,
+    id_ranking FK Ranking (id),
+    int id_profesor,
+    id_profesor FK Profesores (id),
+    int id_curso,
+    id_curso FK Cursos (id)
+};
+
+CREATE TABLE TareasAlumnos {
+    int nota,
+    int id_alumno,
+    int id_tarea,
+    id_alumno FK Alumnos (id),
+    id_tarea FK Tareas (id),
+    (id_alumno,id_tarea) primary key
+}
+
+CREATE TABLE Casillas {
+    int posicion primary key,
     int id_propietario,
     varchar tipo_terreno,
     id_propietario FK Alumnos(id)
@@ -38,16 +56,6 @@ CREATE TABLE Notificaciones {
     id_alumno_recive FK Alumnos (id),
     int id_curso,
     id_curso FK Cursos (id);
-};
-
-CREATE TABLE Tareas {
-    int id AUTO_INCREMENT primary key,
-    int cantidad,
-    datetime fecha,
-    int id_usuario,
-    int id_curso,
-    id_usuario FK Usuarios (id),
-    id_curso FK Cursos (id)
 };
 
 CREATE TABLE Inventario {
