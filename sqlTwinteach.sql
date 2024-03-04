@@ -76,7 +76,9 @@ CREATE TABLE Objetos {
 CREATE TABLE Cursos {
     int id AUTO_INCREMENT primary key,
     varchar url_imagen,
-    datetime fecha_creacion
+    datetime fecha_creacion,
+    int administrador,
+    administrador FK Profesores(id)
 };
 
 CREATE TABLE Alumnos {
@@ -113,10 +115,6 @@ CREATE TABLE CursosProfesores {
     id_Profesor FK Profesores (id),
     id_curso Fk Cursos (id),
     PRIMARY(id_Profesor, id_curso)
-}
-
-CREATE TABLE Administrador {
-    
 }
 
 CREATE TABLE CursosInventarios {
