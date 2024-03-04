@@ -12,7 +12,8 @@ CREATE TABLE Mapa {
     int col,
     (row, col) primary key,
     int id_propietario,
-    varchar tipo_terreno
+    varchar tipo_terreno,
+    id_propietario FK Alumnos(id)
 };
 
 CREATE TABLE Softskill {
@@ -22,8 +23,10 @@ CREATE TABLE Softskill {
     int puntos,
     int id_alumno_envia,
     int id_alumno_recive,
-    id_alumno_envia FK Cursos (id),
-    id_alumno_recive FK Cursos (id)
+    int id_curso,
+    id_alumno_envia FK Alumnos (id),
+    id_alumno_recive FK Alumnos (id),
+    id_curso FK Cursos (id)
 };
 
 CREATE TABLE Notificaciones {
@@ -32,7 +35,7 @@ CREATE TABLE Notificaciones {
     varchar url_imagen,
     datetime fecha,
     int id_alumno_recive,
-    id_alumno_recive FK Usuarios (id),
+    id_alumno_recive FK Alumnos (id),
     int id_curso,
     id_curso FK Cursos (id);
 };
@@ -68,7 +71,16 @@ CREATE TABLE Cursos {
     datetime fecha_creacion
 };
 
-CREATE TABLE Usuarios {
+CREATE TABLE Alumnos {
+    int id AUTO_INCREMENT primary key,
+    varchar nombre_apellidos (200),
+    varchar nick (50),
+    varchar contraseña (100),
+    varchar correo (50),
+    varchar url_imagen
+};
+
+CREATE TABLE Profesores {
     int id AUTO_INCREMENT primary key,
     varchar nombre_apellidos (200),
     varchar nick (50),
