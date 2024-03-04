@@ -119,10 +119,18 @@ CREATE TABLE InventariosUsuarios {
     id_inventario FK Inventario (id)
 };
 
-CREATE TABLE Errores {
+CREATE TABLE ErroresProfesores {
     int id AUTO_INCREMENT primary key,
     varchar texto (2000),
     datetime fecha
-    int id_usuario,
-    id_usuario FK Usuarios (id)
+    int id_profesor,
+    id_profesor FK Profesores (id)
+};
+
+CREATE TABLE ErroresAlumnos {
+    int id AUTO_INCREMENT primary key,
+    varchar texto (2000),
+    datetime fecha
+    int id_alumno,
+    id_alumno FK Alumnos (id)
 };
