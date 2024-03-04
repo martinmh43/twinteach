@@ -1,8 +1,8 @@
 CREATE TABLE Ranking {
     int id AUTO_INCREMENT primary key,
-    varchar Nombre,
+    varchar Nombre (200),
     int num_participantes,
-    datetime fecha_creacion,
+    date fecha_creacion,
     int id_curso,
     id_curso FK Cursos (id)
 };
@@ -12,13 +12,14 @@ CREATE TABLE Mapa {
     int col,
     (row, col) primary key,
     int id_propietario,
+    id_propietario FK Usuarios (id),
     varchar tipo_terreno
 };
 
 CREATE TABLE Softskill {
     int id AUTO_INCREMENT primary key,
-    varchar nombre,
-    datetime fehca_envio,
+    varchar nombre (200),
+    date fehca_envio,
     int puntos,
     int id_alumno_envia,
     int id_alumno_recive,
@@ -30,7 +31,7 @@ CREATE TABLE Notificaciones {
     int id AUTO_INCREMENT primary key,
     varchar titulo,
     varchar url_imagen,
-    datetime fecha,
+    date fecha,
     int id_alumno_recive,
     id_alumno_recive FK Usuarios (id),
     int id_curso,
@@ -40,7 +41,7 @@ CREATE TABLE Notificaciones {
 CREATE TABLE Tareas {
     int id AUTO_INCREMENT primary key,
     int cantidad,
-    datetime fecha,
+    date fecha,
     int id_usuario,
     int id_curso,
     id_usuario FK Usuarios (id),
@@ -56,8 +57,8 @@ CREATE TABLE Inventario {
 CREATE TABLE Objetos {
     int id AUTO_INCREMENT primary key,
     int cantidad,
-    datetime fecha_creacion,
-    datetime fecha_modificacion,
+    date fecha_creacion,
+    date fecha_modificacion,
     int id_inventario,
     id_inventario FK Inventario (id_inventario)
 }; 
@@ -65,7 +66,7 @@ CREATE TABLE Objetos {
 CREATE TABLE Cursos {
     int id AUTO_INCREMENT primary key,
     varchar url_imagen,
-    datetime fecha_creacion
+    date fecha_creacion
 };
 
 CREATE TABLE Usuarios {
@@ -102,7 +103,7 @@ CREATE TABLE InventariosUsuarios {
 CREATE TABLE Errores {
     int id AUTO_INCREMENT primary key,
     varchar texto (2000),
-    datetime fecha
+    date fecha
     int id_usuario,
     id_usuario FK Usuarios (id)
 };
