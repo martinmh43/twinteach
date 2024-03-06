@@ -211,7 +211,6 @@ CREATE TABLE CursosProfesores (
     FOREIGN KEY id_curso REFERENCES Cursos (id),
 );
 
-<<<<<<< Updated upstream
 CREATE TABLE CursosInventarios (
     id_curso int,
     id_inventario int,
@@ -241,7 +240,7 @@ CREATE TABLE ErroresAlumnos (
     id_alumno int,
     FOREIGN KEY id_alumno REFERENCES Alumnos (id)
 );
-=======
+
 CREATE TABLE CursosInventarios (
     id_curso int,
     id_inventario int,
@@ -271,4 +270,3 @@ CREATE TABLE ErroresAlumnos (
     id_alumno int,
     FOREIGN KEY id_alumno REFERENCES Alumnos (id)
 );
->>>>>>> Stashed changes
