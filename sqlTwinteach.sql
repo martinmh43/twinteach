@@ -3,7 +3,7 @@ CREATE TABLE Ranking (
     Nombre varchar,
     fecha_creacion datetime ,
     id_curso int,
-    id_curso FK Cursos (id)
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
 CREATE TABLE Tareas (
@@ -11,23 +11,23 @@ CREATE TABLE Tareas (
     cantidad int,
     fecha datetime,
     id_ranking int,
-    id_ranking FK Ranking (id),
+    FOREIGN KEY id_ranking REFERENCES Ranking (id),
     id_profesor int,
-    id_profesor FK Profesores (id),
+    FOREIGN KEY id_profesor REFERENCES Profesores (id),
     id_curso int,
-    id_curso FK Cursos (id)
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
 CREATE TABLE TareasAlumnos (
     nota int,
     id_alumno int,
     id_tarea int,
-    id_alumno FK Alumnos (id),
-    id_tarea FK Tareas (id),
+    FOREIGN KEY id_alumno REFERENCES Alumnos (id),
+    FOREIGN KEY id_tarea REFERENCES Tareas (id),
     id int AUTO_INCREMENT primary key,
     Nombre varchar,
     fecha_creacion datetime,
-     id_curso int,
+    id_curso int,
     FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
@@ -56,7 +56,7 @@ CREATE TABLE Casillas (
     posicion int primary key,
     id_propietario int,
     tipo_terreno varchar,
-    id_propietario FK Alumnos(id)
+    FOREIGN KEY id_propietario REFERENCES Alumnos(id)
 );
 
 CREATE TABLE Softskill (
@@ -67,9 +67,9 @@ CREATE TABLE Softskill (
     id_alumno_envia int,
     id_alumno_recive int,
     id_curso int,
-    id_alumno_envia FK Alumnos (id),
-    id_alumno_recive FK Alumnos (id),
-    id_curso FK Cursos (id)
+    FOREIGN KEY id_alumno_envia REFERENCES Alumnos (id),
+    FOREIGN KEY id_alumno_recive REFERENCES Alumnos (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
 CREATE TABLE Notificaciones (
@@ -78,9 +78,9 @@ CREATE TABLE Notificaciones (
     url_imagen varchar,
     fecha datetime,
     id_alumno_recive int,
-    id_alumno_recive FK Alumnos (id),
-    id_curso int,
-    id_curso FK Cursos (id);
+    FOREIGN KEY id_alumno_recive REFERENCES Alumnos (id),
+    FOREIGN KEY id_curso int,
+    FOREIGN KEY id_curso REFERENCES Cursos (id);
     posicion int primary key,
     id_propietario int,
     tipo_terreno varchar ,
@@ -114,7 +114,7 @@ CREATE TABLE Notificaciones (
 CREATE TABLE Inventario (
     id int AUTO_INCREMENT primary key,
     id_curso int,
-    id_curso FK Cursos (id)
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
 CREATE TABLE Objetos (
@@ -123,12 +123,12 @@ CREATE TABLE Objetos (
     fecha_creacion datetime,
     fecha_modificacion datetime,
     id_inventario int,
-    id_inventario FK Inventario (id_inventario)
+    FOREIGN KEY id_inventario REFERENCES Inventario (id_inventario)
 ); 
 
 CREATE TABLE Cursos (
     id int primary key AUTO_INCREMENT,
-    url_imagen varchar,
+    url_imagen varchar (100),
     fecha_creacion datetime
 );
 
@@ -153,8 +153,8 @@ CREATE TABLE Profesores (
 CREATE TABLE CursosAlumnos (
     id_Alumno int,
     id_curso int,
-    id_usuario FK Alumnos (id),
-    id_curso FK Cursos (id),
+    FOREIGN KEY id_usuario REFERENCES Alumnos (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
     matricular int default(0),
     FOREIGN KEY id_curso REFERENCES Cursos (id);
 );
@@ -207,23 +207,23 @@ CREATE TABLE CursosProfesores (
     id_Profesor int,
     id_curso int,
     matricular int default(0),
-    id_Profesor FK Profesores (id),
-    id_curso Fk Cursos (id),
+    FOREIGN KEY id_Profesor REFERENCES Profesores (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
 );
 
 <<<<<<< Updated upstream
 CREATE TABLE CursosInventarios (
     id_curso int,
     id_inventario int,
-    id_curso FK Cursos (id),
-    id_inventario FK Inventario (id)
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
+    FOREIGN KEY id_inventario REFERENCES Inventario (id)
 );
 
 CREATE TABLE InventariosUsuarios (
     id_inventario int,
     id_usuario int,
-    id_usuario FK Usuarios (id),
-    id_inventario FK Inventario (id)
+    FOREIGN KEY id_usuario REFERENCES Usuarios (id),
+    FOREIGN KEY id_inventario REFERENCES Inventario (id)
 );
 
 CREATE TABLE ErroresProfesores (
@@ -231,7 +231,7 @@ CREATE TABLE ErroresProfesores (
     texto varchar(2000),
     fecha datetime,
     id_profesor int,
-    id_profesor FK Profesores (id)
+    FOREIGN KEY id_profesor REFERENCES Profesores (id)
 );
 
 CREATE TABLE ErroresAlumnos (
@@ -239,7 +239,7 @@ CREATE TABLE ErroresAlumnos (
     texto varchar (2000),
     fecha datetime,
     id_alumno int,
-    id_alumno FK Alumnos (id)
+    FOREIGN KEY id_alumno REFERENCES Alumnos (id)
 );
 =======
 CREATE TABLE CursosInventarios (
