@@ -227,7 +227,7 @@ CREATE TABLE InventariosUsuarios (
 );
 
 CREATE TABLE ErroresProfesores (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     texto varchar(2000),
     fecha datetime,
     id_profesor int,
@@ -235,7 +235,7 @@ CREATE TABLE ErroresProfesores (
 );
 
 CREATE TABLE ErroresAlumnos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     texto varchar (2000),
     fecha datetime,
     id_alumno int,
@@ -257,7 +257,7 @@ CREATE TABLE InventariosUsuarios (
 );
 
 CREATE TABLE ErroresProfesores (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     texto varchar (2000),
     fecha datetime,
     id_profesor int,
@@ -265,7 +265,7 @@ CREATE TABLE ErroresProfesores (
 );
 
 CREATE TABLE ErroresAlumnos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     texto varchar (2000),
     fecha datetime,
     id_alumno int,
