@@ -211,7 +211,6 @@ CREATE TABLE CursosProfesores (
     id_curso Fk Cursos (id),
 );
 
-<<<<<<< Updated upstream
 CREATE TABLE Administrador {
     
 }
