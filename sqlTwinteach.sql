@@ -59,57 +59,57 @@ CREATE TABLE Notificaciones {
 };
 
 CREATE TABLE Inventario {
-    int id AUTO_INCREMENT primary key,
-    int id_curso,
-    id_curso FK Cursos (id);
+    id int AUTO_INCREMENT primary key,
+    id_curso int,
+    id_curso FK Cursos (id)
 };
 
 CREATE TABLE Objetos {
-    int id AUTO_INCREMENT primary key,
-    int cantidad,
-    datetime fecha_creacion,
-    datetime fecha_modificacion,
-    int id_inventario,
+    id int AUTO_INCREMENT primary key,
+    cantidad int,
+    fecha_creacion datetime,
+    fecha_modificacion datetime,
+    id_inventario int,
     id_inventario FK Inventario (id_inventario)
 }; 
 
 CREATE TABLE Cursos {
-    int id AUTO_INCREMENT primary key,
-    varchar url_imagen,
-    datetime fecha_creacion
+    id int primary key AUTO_INCREMENT,
+    url_imagen varchar,
+    fecha_creacion datetime
 };
 
-CREATE TABLE Alumnos {
-    int id AUTO_INCREMENT primary key,
-    varchar nombre_apellidos (200),
-    varchar nick (50),
-    varchar contraseña (100),
-    varchar correo (50),
-    varchar url_imagen
-};
+CREATE TABLE Alumnos (
+    id int AUTO_INCREMENT primary key,
+    nombre_apellidos varchar(200),
+    nick varchar(50),
+    contraseña varchar(100),
+    correo varchar(50),
+    url_imagen varchar
+);
 
 CREATE TABLE Profesores {
-    int id AUTO_INCREMENT primary key,
-    varchar nombre_apellidos (200),
-    varchar nick (50),
-    varchar contraseña (100),
-    varchar correo (50),
-    varchar url_imagen
+    id varchar AUTO_INCREMENT primary key,
+    nombre_apellidos varchar(200),
+    nick varchar(50),
+    contraseña varchar(100),
+    correo varchar(50),
+    url_imagen varchar
 };
 
 CREATE TABLE CursosAlumnos {
-    int id_Alumno,
-    int id_curso,
+    id_Alumno int,
+    id_curso int,
     id_usuario FK Alumnos (id),
     id_curso FK Cursos (id),
-    int matricular default(0),
+    matricular int default(0),
     PRIMARY(id_Alumno, id_curso)
 };
 
 CREATE TABLE CursosProfesores {
-    int id_Profesor,
-    int id_curso,
-    int matricular default(0),
+    id_Profesor int,
+    id_curso int,
+    matricular int default(0),
     id_Profesor FK Profesores (id),
     id_curso Fk Cursos (id),
     PRIMARY(id_Profesor, id_curso)
@@ -120,31 +120,31 @@ CREATE TABLE Administrador {
 }
 
 CREATE TABLE CursosInventarios {
-    int id_curso,
-    int id_inventario,
+    id_curso int,
+    id_inventario int,
     id_curso FK Cursos (id),
     id_inventario FK Inventario (id)
 };
 
 CREATE TABLE InventariosUsuarios {
-    int id_inventario,
-    int id_usuario,
+    id_inventario int,
+    id_usuario int,
     id_usuario FK Usuarios (id),
     id_inventario FK Inventario (id)
 };
 
 CREATE TABLE ErroresProfesores {
-    int id AUTO_INCREMENT primary key,
-    varchar texto (2000),
-    datetime fecha
-    int id_profesor,
+    id int AUTO_INCREMENT primary key,
+    texto varchar(2000),
+    fecha datetime,
+    id_profesor int,
     id_profesor FK Profesores (id)
 };
 
 CREATE TABLE ErroresAlumnos {
-    int id AUTO_INCREMENT primary key,
-    varchar texto (2000),
-    datetime fecha
-    int id_alumno,
+    id int AUTO_INCREMENT primary key,
+    texto varchar (2000),
+    fecha datetime,
+    id_alumno int,
     id_alumno FK Alumnos (id)
 };
