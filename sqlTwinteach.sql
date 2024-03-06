@@ -1,5 +1,5 @@
 CREATE TABLE Ranking (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     Nombre varchar,
     fecha_creacion datetime ,
     id_curso int,
@@ -7,7 +7,7 @@ CREATE TABLE Ranking (
 );
 
 CREATE TABLE Tareas (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     cantidad int,
     fecha datetime,
     id_ranking int,
@@ -24,7 +24,7 @@ CREATE TABLE TareasAlumnos (
     id_tarea int,
     FOREIGN KEY id_alumno REFERENCES Alumnos (id),
     FOREIGN KEY id_tarea REFERENCES Tareas (id),
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     Nombre varchar,
     fecha_creacion datetime,
     id_curso int,
@@ -32,7 +32,7 @@ CREATE TABLE TareasAlumnos (
 );
 
 CREATE TABLE Tareas (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     cantidad int,
     fecha datetime,
     id_ranking int,
@@ -60,7 +60,7 @@ CREATE TABLE Casillas (
 );
 
 CREATE TABLE Softskill (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     nombre varchar,
     fehca_envio datetime,
     puntos int,
@@ -73,7 +73,7 @@ CREATE TABLE Softskill (
 );
 
 CREATE TABLE Notificaciones (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     titulo varchar,
     url_imagen varchar,
     fecha datetime,
@@ -88,7 +88,7 @@ CREATE TABLE Notificaciones (
 );
 
 CREATE TABLE Softskill (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     nombre varchar,
     fehca_envio datetime,
     puntos int,
@@ -101,7 +101,7 @@ CREATE TABLE Softskill (
 );
 
 CREATE TABLE Notificaciones (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     titulo varchar,
     url_imagen varchar,
     fecha datetime,
@@ -112,13 +112,13 @@ CREATE TABLE Notificaciones (
 );
 
 CREATE TABLE Inventario (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     id_curso int,
     FOREIGN KEY id_curso REFERENCES Cursos (id)
 );
 
 CREATE TABLE Objetos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     cantidad int,
     fecha_creacion datetime,
     fecha_modificacion datetime,
@@ -133,7 +133,7 @@ CREATE TABLE Cursos (
 );
 
 CREATE TABLE Alumnos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     nombre_apellidos varchar(200),
     nick varchar(50),
     contraseña varchar(100),
@@ -142,7 +142,7 @@ CREATE TABLE Alumnos (
 );
 
 CREATE TABLE Profesores (
-    id varchar AUTO_INCREMENT primary key,
+    id varchar primary key AUTO_INCREMENT,
     nombre_apellidos varchar(200),
     nick varchar(50),
     contraseña varchar(100),
@@ -160,7 +160,7 @@ CREATE TABLE CursosAlumnos (
 );
 
 CREATE TABLE Objetos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     cantidad int,
     fecha_creacion datetime,
     fecha_modificacion datetime,
@@ -169,7 +169,7 @@ CREATE TABLE Objetos (
 ); 
 
 CREATE TABLE Cursos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     url_imagen varchar,
     fecha_creacion datetime,
     administrador int,
@@ -177,7 +177,7 @@ CREATE TABLE Cursos (
 );
 
 CREATE TABLE Alumnos (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     nombre_apellidos varchar (200),
     nick varchar (50),
     contraseña varchar (100),
@@ -186,7 +186,7 @@ CREATE TABLE Alumnos (
 );
 
 CREATE TABLE Profesores (
-    id int AUTO_INCREMENT primary key,
+    id int primary key AUTO_INCREMENT,
     nombre_apellidos varchar (200),
     nick varchar (50),
     contraseña varchar (100),
