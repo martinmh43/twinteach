@@ -53,33 +53,33 @@ CREATE TABLE TareasAlumnos {
 }
 
 CREATE TABLE Casillas {
-    int posicion primary key,
-    int id_propietario,
-    varchar tipo_terreno,
+    posicion int primary key,
+    id_propietario int,
+    tipo_terreno varchar,
     id_propietario FK Alumnos(id)
 };
 
 CREATE TABLE Softskill {
-    int id AUTO_INCREMENT primary key,
-    varchar nombre,
-    datetime fehca_envio,
-    int puntos,
-    int id_alumno_envia,
-    int id_alumno_recive,
-    int id_curso,
+    id int AUTO_INCREMENT primary key,
+    nombre varchar,
+    fehca_envio datetime,
+    puntos int,
+    id_alumno_envia int,
+    id_alumno_recive int,
+    id_curso int,
     id_alumno_envia FK Alumnos (id),
     id_alumno_recive FK Alumnos (id),
     id_curso FK Cursos (id)
 };
 
 CREATE TABLE Notificaciones {
-    int id AUTO_INCREMENT primary key,
-    varchar titulo,
-    varchar url_imagen,
-    datetime fecha,
-    int id_alumno_recive,
+    id int AUTO_INCREMENT primary key,
+    titulo varchar,
+    url_imagen varchar,
+    fecha datetime,
+    id_alumno_recive int,
     id_alumno_recive FK Alumnos (id),
-    int id_curso,
+    id_curso int,
     id_curso FK Cursos (id);
     posicion int primary key,
     id_propietario int,
@@ -109,13 +109,11 @@ CREATE TABLE Notificaciones {
     FOREIGN KEY id_alumno_recive REFERENCES Alumnos (id),
     id_curso int,
     FOREIGN KEY id_curso REFERENCES Cursos (id);
->>>>>>> Stashed changes
 };
 
 CREATE TABLE Inventario {
     id int AUTO_INCREMENT primary key,
     id_curso int,
-<<<<<<< Updated upstream
     id_curso FK Cursos (id)
 };
 
@@ -158,7 +156,6 @@ CREATE TABLE CursosAlumnos {
     id_usuario FK Alumnos (id),
     id_curso FK Cursos (id),
     matricular int default(0),
-=======
     FOREIGN KEY id_curso REFERENCES Cursos (id);
 };
 
