@@ -177,49 +177,38 @@ CREATE TABLE Cursos (
 );
 
 CREATE TABLE Alumnos (
-    int id AUTO_INCREMENT primary key,
-    varchar nombre_apellidos (200),
-    varchar nick (50),
-    varchar contraseña (100),
-    varchar correo (50),
-    varchar url_imagen
+    id int AUTO_INCREMENT primary key,
+    nombre_apellidos varchar (200),
+    nick varchar (50),
+    contraseña varchar (100),
+    correo varchar (50),
+    url_imagen varchar
 );
 
 CREATE TABLE Profesores (
-    int id AUTO_INCREMENT primary key,
-    varchar nombre_apellidos (200),
-    varchar nick (50),
-    varchar contraseña (100),
-    varchar correo (50),
-    varchar url_imagen
+    id int AUTO_INCREMENT primary key,
+    nombre_apellidos varchar (200),
+    nick varchar (50),
+    contraseña varchar (100),
+    correo varchar (50),
+    url_imagen varchar
 );
 
 CREATE TABLE CursosAlumnos (
-    int id_Alumno,
-    int id_curso,
+    id_Alumno int,
+    id_curso int,
     FOREIGN KEY id_usuario REFERENCES Alumnos (id),
     FOREIGN KEY id_curso REFERENCES Cursos (id),
-    int matricular default(0),
->>>>>>> Stashed changes
+    matricular int default(0),
     PRIMARY(id_Alumno, id_curso)
 );
 
-<<<<<<< Updated upstream
-CREATE TABLE CursosProfesores {
+CREATE TABLE CursosProfesores (
     id_Profesor int,
     id_curso int,
     matricular int default(0),
     id_Profesor FK Profesores (id),
     id_curso Fk Cursos (id),
-=======
-CREATE TABLE CursosProfesores (
-    int id_Profesor,
-    int id_curso,
-    int matricular default(0),
-    FOREIGN KEY id_Profesor REFERENCES Profesores (id),
-    FOREIGN KEY id_curso REFERENCES Cursos (id),
->>>>>>> Stashed changes
-    PRIMARY(id_Profesor, id_curso)
 );
 
 <<<<<<< Updated upstream
