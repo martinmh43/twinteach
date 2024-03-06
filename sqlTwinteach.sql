@@ -1,29 +1,54 @@
 CREATE TABLE Ranking {
-    int id AUTO_INCREMENT primary key,
-    varchar Nombre,
-    datetime fecha_creacion,
-    int id_curso,
+     id int AUTO_INCREMENT primary key,
+    Nombre varchar,
+    fecha_creacion datetime ,
+    id_curso int,
     id_curso FK Cursos (id)
 };
 
 CREATE TABLE Tareas {
-    int id AUTO_INCREMENT primary key,
-    int cantidad,
-    datetime fecha,
-    int id_ranking,
+    id int AUTO_INCREMENT primary key,
+    cantidad int,
+    fecha datetime,
+    id_ranking int,
     id_ranking FK Ranking (id),
-    int id_profesor,
+    id_profesor int,
     id_profesor FK Profesores (id),
-    int id_curso,
+    id_curso int,
     id_curso FK Cursos (id)
 };
 
 CREATE TABLE TareasAlumnos {
-    int nota,
-    int id_alumno,
-    int id_tarea,
+    nota int,
+    id_alumno int,
+    id_tarea int,
     id_alumno FK Alumnos (id),
     id_tarea FK Tareas (id),
+    id int AUTO_INCREMENT primary key,
+    Nombre varchar,
+    fecha_creacion datetime,
+     id_curso int,
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
+};
+
+CREATE TABLE Tareas {
+    id int AUTO_INCREMENT primary key,
+    cantidad int,
+    fecha datetime,
+    id_ranking int,
+    FOREIGN KEY id_ranking REFERENCES Ranking (id),
+    id_profesor int,
+    FOREIGN KEY id_profesor REFERENCES Profesores (id),
+    id_curso int,
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
+};
+
+CREATE TABLE TareasAlumnos {
+    nota int,
+    id_alumno int,
+    id_tarea int,
+    FOREIGN KEY id_alumno REFERENCES Alumnos (id),
+    FOREIGN KEY id_tarea REFERENCES Tareas (id),
     (id_alumno,id_tarea) primary key
 }
 
@@ -56,11 +81,41 @@ CREATE TABLE Notificaciones {
     id_alumno_recive FK Alumnos (id),
     int id_curso,
     id_curso FK Cursos (id);
+    posicion int primary key,
+    id_propietario int,
+    tipo_terreno varchar ,
+    FOREIGN KEY id_propietario REFERENCES Alumnos(id)
+};
+
+CREATE TABLE Softskill {
+    id int AUTO_INCREMENT primary key,
+    nombre varchar,
+    fehca_envio datetime,
+    puntos int,
+    id_alumno_envia int,
+    id_alumno_recive int,
+    id_curso int,
+    FOREIGN KEY id_alumno_envia REFERENCES Alumnos (id),
+    FOREIGN KEY id_alumno_recive REFERENCES Alumnos (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id)
+};
+
+CREATE TABLE Notificaciones {
+    id int AUTO_INCREMENT primary key,
+    titulo varchar,
+    url_imagen varchar,
+    fecha datetime,
+    id_alumno_recive int,
+    FOREIGN KEY id_alumno_recive REFERENCES Alumnos (id),
+    id_curso int,
+    FOREIGN KEY id_curso REFERENCES Cursos (id);
+>>>>>>> Stashed changes
 };
 
 CREATE TABLE Inventario {
     id int AUTO_INCREMENT primary key,
     id_curso int,
+<<<<<<< Updated upstream
     id_curso FK Cursos (id)
 };
 
@@ -103,18 +158,74 @@ CREATE TABLE CursosAlumnos {
     id_usuario FK Alumnos (id),
     id_curso FK Cursos (id),
     matricular int default(0),
-    PRIMARY(id_Alumno, id_curso)
+=======
+    FOREIGN KEY id_curso REFERENCES Cursos (id);
 };
 
+CREATE TABLE Objetos (
+    id int AUTO_INCREMENT primary key,
+    int cantidad,
+    datetime fecha_creacion,
+    datetime fecha_modificacion,
+    int id_inventario,
+    FOREIGN KEY id_inventario REFERENCES Inventario (id_inventario)
+); 
+
+CREATE TABLE Cursos (
+    int id AUTO_INCREMENT primary key,
+    varchar url_imagen,
+    datetime fecha_creacion,
+    int administrador,
+    FOREIGN KEY administrador REFERENCES Profesores(id)
+);
+
+CREATE TABLE Alumnos (
+    int id AUTO_INCREMENT primary key,
+    varchar nombre_apellidos (200),
+    varchar nick (50),
+    varchar contraseña (100),
+    varchar correo (50),
+    varchar url_imagen
+);
+
+CREATE TABLE Profesores (
+    int id AUTO_INCREMENT primary key,
+    varchar nombre_apellidos (200),
+    varchar nick (50),
+    varchar contraseña (100),
+    varchar correo (50),
+    varchar url_imagen
+);
+
+CREATE TABLE CursosAlumnos (
+    int id_Alumno,
+    int id_curso,
+    FOREIGN KEY id_usuario REFERENCES Alumnos (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
+    int matricular default(0),
+>>>>>>> Stashed changes
+    PRIMARY(id_Alumno, id_curso)
+);
+
+<<<<<<< Updated upstream
 CREATE TABLE CursosProfesores {
     id_Profesor int,
     id_curso int,
     matricular int default(0),
     id_Profesor FK Profesores (id),
     id_curso Fk Cursos (id),
+=======
+CREATE TABLE CursosProfesores (
+    int id_Profesor,
+    int id_curso,
+    int matricular default(0),
+    FOREIGN KEY id_Profesor REFERENCES Profesores (id),
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
+>>>>>>> Stashed changes
     PRIMARY(id_Profesor, id_curso)
-}
+);
 
+<<<<<<< Updated upstream
 CREATE TABLE Administrador {
     
 }
@@ -148,3 +259,34 @@ CREATE TABLE ErroresAlumnos {
     id_alumno int,
     id_alumno FK Alumnos (id)
 };
+=======
+CREATE TABLE CursosInventarios (
+    int id_curso,
+    int id_inventario,
+    FOREIGN KEY id_curso REFERENCES Cursos (id),
+    FOREIGN KEY id_inventario REFERENCES Inventario (id)
+);
+
+CREATE TABLE InventariosUsuarios (
+    int id_inventario,
+    int id_usuario,
+    FOREIGN KEY id_usuario REFERENCES Usuarios (id),
+    FOREIGN KEY id_inventario REFERENCES Inventario (id)
+);
+
+CREATE TABLE ErroresProfesores (
+    int id AUTO_INCREMENT primary key,
+    varchar texto (2000),
+    datetime fecha
+    int id_profesor,
+    FOREIGN KEY id_profesor REFERENCES Profesores (id)
+);
+
+CREATE TABLE ErroresAlumnos (
+    int id AUTO_INCREMENT primary key,
+    varchar texto (2000),
+    datetime fecha
+    int id_alumno,
+    FOREIGN KEY id_alumno REFERENCES Alumnos (id)
+);
+>>>>>>> Stashed changes
