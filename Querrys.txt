@@ -1,0 +1,31 @@
+CONSULTAS:
+
+1- Crear cuenta bbdd (alumnoEjercicioBBDD, ejercicioBBDD@gmail.com, 123456789,
+			 ejercicioBBDD, ApellidosEjercicioBBDD) -> Insert
+2- Log in como alumno
+3- Cambiar icono
+4- Crear cuenta como profesor (profesorEjercicioBBDD...)
+5- Log in como profesor
+6- Crear curso (EjercicioBBDD)
+7- Ver los codigos de acceso de los cursos
+8- Alumno solicita unirse al curso
+9- Mostrar los que tienen aceptado = 0
+10- Aceptar al alumno -> (update) -> se hacen 3 consultas -> cofre madre(id-1), huevo(id-58), oro cant. 5
+11- Saber cuantos miembros hay en el curso
+12- Ver mis cursos
+13- Entrar curso
+14- Abrir cofre -> buscar alumno, curso e id_item = 2 (cofre) , cantidad - 1 y update
+15- Insert de los nuevos objetos que han tocado con las nuevas cantidades
+	2 monedas (update), id 56 piedra fuego cant(3), id 50 calabaza, id 200 hansel (insert)
+16- Ir al pueblo (200<=id<=500) mostrar todos los chibis
+17- Ver las softSkills, select sobre tabla evalua
+18- Evaluar compañeros -> cooperacion 3 puntos
+19- Mostrar el desplegable de los alumnos que hay dentro del curso
+20- Profesor -> administrar curso -> crea ranking nombre = ejercicioBBDD
+21- Crea tarea 1, ejercicioBBDD
+22- Cambiar notas, guardar puntuaciones
+23- Entregar recompensas -> update en tabla inventario
+24- Consulta muetra los rankings (desplegable)
+25- Nota de cada una de las tareas (mostrar tabla)
+26- Mostrar el inventario de la tabla objetos (condicion id_curso, id_alumno, cantidad > 0)
+27- Ataque -> modifican las monedas, codicia, update numero monedas, insert tabla notificaciones
