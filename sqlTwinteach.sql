@@ -108,8 +108,7 @@ CREATE TABLE CursosAlumnos (
     id_curso int,
     FOREIGN KEY (id_Alumno) REFERENCES Alumnos (id),
     FOREIGN KEY (id_curso) REFERENCES Cursos (id),
-    matricular int default(0),
-    FOREIGN KEY (id_curso) REFERENCES Cursos (id)
+    matricular int default(0)
 );
 
 CREATE TABLE CursosProfesores (

@@ -47,9 +47,20 @@ WHERE nombre_apellidos="profesorEjercicioBBDD" and contraseña="12345";
 */
 
 INSERT INTO Cursos (url_imagen, fecha_creacion, codigoAlumnos, codigoProfesores)
-VALUES ("la mama de la mama de la mama", 12/12/1212, "78751488", "848718")
+VALUES ("la mama de la mama de la mama", 12/12/1212, "78751488", "848718");
 
 /*
 7. Ver los codigos de acceso de los cursos
 */
 
+
+
+
+
+
+/*
+8. Alumno solicita unirse al curso
+*/
+
+INSERT INTO CursosAlumnos (id_Alumno, id_curso)
+VALUES (1, 1);
