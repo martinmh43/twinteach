@@ -81,8 +81,6 @@ SET
 matricular = 1
 WHERE matricular = 0 AND id_Alumno = 1 AND id_curso = 1;
 /*10.2*/
-
-
 UPDATE ObjetosAlumnos
 SET
 cantidad = 1
