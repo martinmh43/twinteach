@@ -54,12 +54,21 @@ VALUES ("la mama de la mama de la mama", 12/12/1212, "78751488", "848718");
 7. Ver los codigos de acceso de los cursos
 */
 
+
 SELECT codigoAlumnos,codigoProfesores
 FROM Cursos
 WHERE id = 1;
 
-
 /*
 8. Alumno solicita unirse al curso
 */
+
+INSERT INTO CursosAlumnos (id_Alumno, id_curso)
+VALUES (1, 1);
+
+/*
+9- Mostrar los que tienen aceptado = 0
+*/
+
+SELECT matricular FROM CursosAlumnos WHERE matricular = 0;
 
