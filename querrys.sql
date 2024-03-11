@@ -11,11 +11,20 @@ VALUES ("alumnoEjercicioBBDD", "ejercicioBBDD", "123456789", "ejercicioBBDD@gmai
 2. Log in como alumno
 */
 
+
 SELECT nombre_apellidos, contraseña 
 FROM Alumnos
 WHERE nombre_apellidos="alumnoEjercicioBBDD" and contraseña="123456789";
 
+/*
+3. Cambiar icono del alumno
+*/
 
+UPDATE Alumnos 
+SET 
+url_imagen = 'tu jamon con calzon'
+WHERE 
+url_imagen = 'tu jamon bien panzon'
 
 /*
 4. Crear cuenta como profesor (profesorEjercicioBBDD...)
