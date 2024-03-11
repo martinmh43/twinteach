@@ -31,3 +31,9 @@ VALUES ("profesorEjercicioBBDD", "profEjercicioBBDD", "12345", "profesorEjercici
 SELECT nombre_apellidos, contraseña 
 FROM Profesores
 WHERE nombre_apellidos="profesorEjercicioBBDD" and contraseña="12345";
+
+
+/*
+7. Ver los codigos de acceso de los cursos
+*/
+

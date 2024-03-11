@@ -1,7 +1,9 @@
 CREATE TABLE Cursos (
     id int primary key AUTO_INCREMENT,
     url_imagen varchar (100),
-    fecha_creacion datetime
+    fecha_creacion datetime,
+    codigoAlumnos varchar(50),
+    codigoProfesores varchar(50)
 );
 
 CREATE TABLE Alumnos (
