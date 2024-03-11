@@ -11,3 +11,14 @@ VALUES ("alumnoEjercicioBBDD", "ejercicioBBDD", "123456789", "ejercicioBBDD@gmai
 
 */
 
+
+
+/*
+Cambiar icono del alumno
+*/
+
+UPDATE Alumnos 
+SET 
+url_imagen = 'tu jamon con calzon'
+WHERE 
+url_imagen = 'tu jamon bien panzon'
