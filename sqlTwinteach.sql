@@ -88,19 +88,15 @@ CREATE TABLE Notificaciones (
     FOREIGN KEY (id_curso) REFERENCES Cursos (id)
 );
 
-CREATE TABLE Inventario (
-    id int primary key AUTO_INCREMENT,
-    id_curso int,
-    FOREIGN KEY (id_curso) REFERENCES Cursos (id)
-);
 
 CREATE TABLE Objetos (
     id int primary key AUTO_INCREMENT,
     cantidad int,
+    id_item int,
     fecha_creacion datetime,
     fecha_modificacion datetime,
-    id_inventario int,
-    FOREIGN KEY (id_inventario) REFERENCES Inventario (id)
+    id_curso int,
+    FOREIGN KEY (id_curso) REFERENCES Cursos (id)
 ); 
 
 CREATE TABLE CursosAlumnos (
@@ -119,18 +115,18 @@ CREATE TABLE CursosProfesores (
     FOREIGN KEY (id_curso) REFERENCES Cursos (id)
 );
 
-CREATE TABLE CursosInventarios (
+CREATE TABLE CursosObjetos (
     id_curso int,
-    id_inventario int,
+    id_objeto int,
     FOREIGN KEY (id_curso) REFERENCES Cursos (id),
-    FOREIGN KEY (id_inventario) REFERENCES Inventario (id)
+    FOREIGN KEY (id_objeto) REFERENCES Objetos (id)
 );
 
-CREATE TABLE InventariosAlumnos (
-    id_inventario int,
+CREATE TABLE ObjetosAlumnos (
+    id_objeto int,
     id_Alumno int,
     FOREIGN KEY (id_Alumno) REFERENCES Alumnos (id),
-    FOREIGN KEY (id_inventario) REFERENCES Inventario (id)
+    FOREIGN KEY (id_objeto) REFERENCES Objetos (id)
 );
 
 CREATE TABLE ErroresProfesores (

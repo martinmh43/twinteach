@@ -70,3 +70,15 @@ VALUES (1, 1);
 */
 
 SELECT matricular FROM CursosAlumnos WHERE matricular = 0;
+
+/*
+10- Aceptar al alumno -> (update) -> 
+se hacen 3 consultas -> cofre madre(id-1), 
+huevo(id-58), oro cant. 5
+*/
+/*10.1*/
+UPDATE CursosAlumnos 
+SET
+matricular = 1
+WHERE matricular = 0 AND id_Alumno = 1 AND id_curso = 1;
+/*10.2*/
