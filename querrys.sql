@@ -83,6 +83,25 @@ WHERE matricular = 0 AND id_Alumno = 1 AND id_curso = 1;
 /*10.2*/
 
 
+UPDATE ObjetosAlumnos
+SET
+cantidad = 1
+WHERE
+id_objeto = 2;
+/*10.3*/
+UPDATE ObjetosAlumnos
+SET
+cantidad = 1
+WHERE
+id_objeto = 58;
+/*10.4*/
+UPDATE ObjetosAlumnos
+SET
+cantidad = 5
+WHERE
+id_objeto = 1
+
+
 /*
 11. Saber cuantos miembros hay en el curso
 */
