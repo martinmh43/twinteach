@@ -45,4 +45,9 @@ WHERE nombre_apellidos="profesorEjercicioBBDD" and contraseña="12345";
 /*
 7. Ver los codigos de acceso de los cursos
 */
+INSERT INTO Cursos
+
+/*
+8. Alumno solicita unirse al curso
+*/
 
