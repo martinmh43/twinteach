@@ -72,3 +72,24 @@ VALUES (1, 1);
 
 SELECT matricular FROM CursosAlumnos WHERE matricular = 0;
 
+
+
+
+/*
+11. Saber cuantos miembros hay en el curso
+*/
+
+SELECT COUNT(*)
+FROM Alumnos;
+
+
+/*
+12. Ver mis cursos
+*/
+
+SELECT id_curso
+
+
+
+
+
