@@ -91,7 +91,6 @@ CREATE TABLE Notificaciones (
 
 CREATE TABLE Objetos (
     id int primary key AUTO_INCREMENT,
-    cantidad int,
     id_item int,
     fecha_creacion datetime,
     fecha_modificacion datetime,
@@ -110,6 +109,7 @@ CREATE TABLE CursosAlumnos (
 CREATE TABLE CursosProfesores (
     id_Profesor int,
     id_curso int,
+    administrador boolean,
     matricular int default(0),
     FOREIGN KEY (id_Profesor) REFERENCES Profesores (id),
     FOREIGN KEY (id_curso) REFERENCES Cursos (id)
@@ -117,6 +117,7 @@ CREATE TABLE CursosProfesores (
 
 CREATE TABLE CursosObjetos (
     id_curso int,
+    cantidad int,
     id_objeto int,
     FOREIGN KEY (id_curso) REFERENCES Cursos (id),
     FOREIGN KEY (id_objeto) REFERENCES Objetos (id)
