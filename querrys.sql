@@ -64,3 +64,9 @@ VALUES ("la mama de la mama de la mama", 12/12/1212, "78751488", "848718");
 
 INSERT INTO CursosAlumnos (id_Alumno, id_curso)
 VALUES (1, 1);
+
+/*
+9- Mostrar los que tienen aceptado = 0
+*/
+
+SELECT matricular FROM CursosAlumnos WHERE matricular = 0;
