@@ -18,7 +18,7 @@ WHERE nombre_apellidos="alumnoEjercicioBBDD" and contraseña="123456789";
 
 /*
 3. Cambiar icono del alumno
-*/ 
+*/
 
 UPDATE Alumnos 
 SET 
