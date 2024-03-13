@@ -82,7 +82,6 @@ matricular = 1
 WHERE matricular = 0 AND id_Alumno = 1 AND id_curso = 1;
 /*10.2*/
 
-
 UPDATE ObjetosAlumnos
 SET
 cantidad = 1
@@ -106,6 +105,9 @@ id_objeto = 1
 11. Saber cuantos miembros hay en el curso
 */
 
-SELECT COUNT(Alumnos.id,Profesores.id)
-FROM Alumnos,Cursos,CursosAlumnos
-WHERE ;
+SELECT COUNT(DISTINCT CursosProfesores.id_Profesor) AS cantidad_profesores,
+    COUNT(DISTINCT CursosAlumnos.id_Alumno) AS cantidad_alumnos
+FROM Cursos c
+INNER JOIN CursosProfesores CP ON c.id = CP.id_curso
+INNER JOIN CursosAlumnos CA ON c.id = CA.id_curso
+where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
