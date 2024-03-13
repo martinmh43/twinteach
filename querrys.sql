@@ -120,3 +120,24 @@ WHERE Alumnos.id = 1;
 */
 INSERT INTO CursosAlumnos(id_Alumno, id_curso)
 VALUES (1,1);
+
+
+
+
+/*
+15. Insert de los nuevos objetos que han tocado con las nuevas cantidades
+	2 monedas (update), id 56 piedra fuego cant(3), id 50 calabaza, 
+    id 200 hansel (insert)
+*/
+/*15.1*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES(1, 2, 1);
+/*15.2*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES(56, 3, 1);
+/*15.3*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES (50, 1, 1);
+/*15.4*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES (200, 1, 1);
