@@ -204,3 +204,12 @@ UPDATE TareasAlumnos
 SET
 nota = 10
 WHERE nota = 0 AND id_alumno = 1, id_tarea = 1;
+
+
+/*
+24. consulta muetra los rankings (desplegable)
+*/
+SELECT Ranking.id, Ranking.Nombre 
+FROM Ranking 
+JOIN Cursos ON id_curso = Cursos.id
+WHERE id_curso = 1;
