@@ -220,6 +220,14 @@ JOIN Cursos ON id_curso = Cursos.id
 WHERE id_curso = 1;
 
 /*
+24. consulta muetra los rankings (desplegable)
+*/
+SELECT Ranking.id, Ranking.Nombre 
+FROM Ranking 
+JOIN Cursos ON id_curso = Cursos.id
+WHERE id_curso = 1;
+
+/*
 26. Mostrar el inventario de la tabla objetos 
 (condicion id_curso, id_alumno, cantidad > 0)
 */
@@ -229,3 +237,20 @@ JOIN Objetos on id_objeto = id_item,
 JOIN Alumnos ON ObjetosAlumnos.id_Alumno = Alumnos.id, 
 JOIN Cursos ON Objetos.id_curso = Cursos.id
 WHERE Alumnos.id = 1, Cursos.id = 1 cantidad < 0;
+
+/*
+27. Ataque -> modifican las monedas, codicia,
+ update numero monedas, insert tabla notificaciones
+*/
+
+UPDATE ObjetosAlumnos
+SET cantidad = cantidad + 5
+WHERE id_objeto = 1 AND id_Alumno = 1;
+
+UPDATE CursosAlumnos
+SET codicia = codicia + 10
+WHERE id_Alumno = 1;
+
+UPDATE CursosAlumnos
+SET codicia = GREATEST(codicia - 5, 0)
+WHERE id_Alumno = 2;

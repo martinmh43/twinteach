@@ -102,6 +102,7 @@ CREATE TABLE Objetos (
 CREATE TABLE CursosAlumnos (
     id_Alumno int,
     id_curso int,
+    codicia int,
     FOREIGN KEY (id_Alumno) REFERENCES Alumnos (id),
     FOREIGN KEY (id_curso) REFERENCES Cursos (id),
     matricular int default(0)
