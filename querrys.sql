@@ -190,3 +190,11 @@ WHERE CursosAlumnos.id_curso = 1;
 
 INSERT INTO Tareas(cantidad, fehca, id_ranking, id_profesor, id_curso)
 VALUES (1,13-03-2024,1,1,1);
+
+
+
+/*
+23. Entregar recompensas -> insert en tabla inventario
+*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES (3, 1, 1);
