@@ -196,3 +196,11 @@ VALUES (1, 'El pepito', 13-03-2024, 1);
 
 INSERT INTO Tareas(cantidad, fehca, id_ranking, id_profesor, id_curso)
 VALUES (1,13-03-2024,1,1,1);
+
+/*
+22. Cambiar notas, guardar puntuaciones
+*/
+UPDATE TareasAlumnos
+SET
+nota = 10
+WHERE nota = 0 AND id_alumno = 1, id_tarea = 1;
