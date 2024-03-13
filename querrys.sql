@@ -107,3 +107,11 @@ id_objeto = 1
 SELECT COUNT(Alumnos.id,Profesores.id)
 FROM Alumnos,Cursos,CursosAlumnos
 WHERE ;
+
+/*
+12. Ver mis cursos
+*/
+SELECT Cursos.nombre, Cursos.url_imagen 
+FROM Cursos JOIN CursosAlumnos ON Cursos.id = CursosAlumnos.id_curso,
+JOIN Alumnos ON CursosAlumnos.id_Alumno = Alumnos.id
+WHERE Alumnos.id = 1;
