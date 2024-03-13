@@ -111,7 +111,13 @@ JOIN CursosProfesores CP ON c.id = CP.id_curso
 JOIN CursosAlumnos CA ON c.id = CA.id_curso
 where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
 
-
+/*
+12. Ver mis cursos
+*/
+SELECT Cursos.nombre, Cursos.url_imagen 
+FROM Cursos JOIN CursosAlumnos ON Cursos.id = CursosAlumnos.id_curso,
+JOIN Alumnos ON CursosAlumnos.id_Alumno = Alumnos.id
+WHERE Alumnos.id = 1;
 /*
 13. Entrar curso
 */
