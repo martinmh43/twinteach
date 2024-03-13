@@ -189,3 +189,10 @@ WHERE CursosAlumnos.id_curso = 1;
 
 INSERT INTO Ranking (id, Nombre, fecha_creacion, id_curso)
 VALUES (1, 'El pepito', 13-03-2024, 1);
+
+/*
+21. Crea tarea 1, ejercicioBBDD
+*/
+
+INSERT INTO Tareas(cantidad, fehca, id_ranking, id_profesor, id_curso)
+VALUES (1,13-03-2024,1,1,1);
