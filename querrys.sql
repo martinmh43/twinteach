@@ -107,8 +107,8 @@ id_objeto = 1
 SELECT COUNT(DISTINCT CursosProfesores.id_Profesor) AS cantidad_profesores,
     COUNT(DISTINCT CursosAlumnos.id_Alumno) AS cantidad_alumnos
 FROM Cursos c
-INNER JOIN CursosProfesores CP ON c.id = CP.id_curso
-INNER JOIN CursosAlumnos CA ON c.id = CA.id_curso
+JOIN CursosProfesores CP ON c.id = CP.id_curso
+JOIN CursosAlumnos CA ON c.id = CA.id_curso
 where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
 
 
@@ -117,3 +117,15 @@ where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
 */
 INSERT INTO CursosAlumnos(id_Alumno, id_curso)
 VALUES (1,1);
+
+/*
+14. Abrir cofre -> buscar alumno, curso e id_item = 2 (cofre) ,
+    cantidad - 1 y update
+*/
+
+UPDATE ObjetosAlumnos
+SET id_objeto = 2, cantidad = 0
+SET id_objeto = 201, cantidad = 1,
+SET id_objeto = 1, cantidad = 5
+JOIN Alumnos a ON a.id = ObjetosAlumnos.id_alumno
+WHERE  id_alumno = 1;
