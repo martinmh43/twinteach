@@ -222,3 +222,21 @@ SELECT Tareas.id, Tareas.cantidad
 FROM Tareas
 JOIN TareasAlumnos ON Tareas.id = TareasAlumnos.id_tarea
 GROUP BY Tareas.id, Tareas.cantidad;
+
+
+/*
+27. Ataque -> modifican las monedas, codicia,
+ update numero monedas, insert tabla notificaciones
+*/
+
+UPDATE ObjetosAlumnos
+SET cantidad = cantidad + 5
+WHERE id_objeto = 1 AND id_Alumno = 1;
+
+UPDATE CursosAlumnos
+SET codicia = codicia + 10
+WHERE id_Alumno = 1;
+
+UPDATE CursosAlumnos
+SET codicia = GREATEST(codicia - 5, 0)
+WHERE id_Alumno = 2;
