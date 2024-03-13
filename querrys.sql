@@ -183,6 +183,12 @@ FROM Alumnos
 JOIN CursosAlumnos ON Alumnos.id = CursosAlumnos.id_Alumno
 WHERE CursosAlumnos.id_curso = 1;
 
+/*
+20. Profesor -> administrar curso -> crea ranking nombre = ejercicioBBDD
+*/
+
+INSERT INTO Ranking (id, Nombre, fecha_creacion, id_curso)
+VALUES (1, 'El pepito', 13-03-2024, 1);
 
 /*
 21. Crea tarea 1, ejercicioBBDD
@@ -191,6 +197,13 @@ WHERE CursosAlumnos.id_curso = 1;
 INSERT INTO Tareas(cantidad, fehca, id_ranking, id_profesor, id_curso)
 VALUES (1,13-03-2024,1,1,1);
 
+/*
+22. Cambiar notas, guardar puntuaciones
+*/
+UPDATE TareasAlumnos
+SET
+nota = 10
+WHERE nota = 0 AND id_alumno = 1, id_tarea = 1;
 
 
 /*
