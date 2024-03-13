@@ -166,3 +166,12 @@ WHERE id BETWEEN 200 AND 500;
 
 SELECT id, nombre, puntos
 FROM Softskill;
+
+/*
+18. Evaluar compañeros -> cooperacion 3 puntos
+*/
+
+INSERT INTO Softskill (nombre, fehca_envio, puntos, id_alumno_envia, id_alumno_recive, id_curso)
+VALUES ('cooperación', 13-03-2024, 3, 1, 2, 1);
+
+
