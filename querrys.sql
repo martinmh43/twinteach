@@ -159,4 +159,12 @@ FROM Softskill;
 INSERT INTO Softskill (nombre, fehca_envio, puntos, id_alumno_envia, id_alumno_recive, id_curso)
 VALUES ('cooperación', 13-03-2024, 3, 1, 2, 1);
 
+/*
+19. Mostrar el desplegable de los alumnos que hay dentro del curso
+*/
+
+SELECT Alumnos.*
+FROM Alumnos
+JOIN CursosAlumnos ON Alumnos.id = CursosAlumnos.id_Alumno
+WHERE CursosAlumnos.id_curso = 1;
 
