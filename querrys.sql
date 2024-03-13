@@ -183,3 +183,10 @@ FROM Alumnos
 JOIN CursosAlumnos ON Alumnos.id = CursosAlumnos.id_Alumno
 WHERE CursosAlumnos.id_curso = 1;
 
+
+/*
+21. Crea tarea 1, ejercicioBBDD
+*/
+
+INSERT INTO Tareas(cantidad, fehca, id_ranking, id_profesor, id_curso)
+VALUES (1,13-03-2024,1,1,1);
