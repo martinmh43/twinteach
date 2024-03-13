@@ -110,3 +110,10 @@ FROM Cursos c
 INNER JOIN CursosProfesores CP ON c.id = CP.id_curso
 INNER JOIN CursosAlumnos CA ON c.id = CA.id_curso
 where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
+
+
+/*
+13. Entrar curso
+*/
+INSERT INTO CursosAlumnos(id_Alumno, id_curso)
+VALUES (1,1);
