@@ -211,3 +211,14 @@ WHERE nota = 0 AND id_alumno = 1, id_tarea = 1;
 */
 INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
 VALUES (3, 1, 1);
+
+
+
+/*
+25. Nota de cada una de las tareas (mostrar tabla)
+*/
+
+SELECT Tareas.id, Tareas.cantidad
+FROM Tareas
+JOIN TareasAlumnos ON Tareas.id = TareasAlumnos.id_tarea
+GROUP BY Tareas.id, Tareas.cantidad;
