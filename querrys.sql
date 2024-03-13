@@ -218,3 +218,14 @@ SELECT Ranking.id, Ranking.Nombre
 FROM Ranking 
 JOIN Cursos ON id_curso = Cursos.id
 WHERE id_curso = 1;
+
+/*
+26. Mostrar el inventario de la tabla objetos 
+(condicion id_curso, id_alumno, cantidad > 0)
+*/
+SELECT ObjetosAlumnos.id_objeto, ObjetosAlumnos.cantidad 
+FROM ObjetosAlumnos 
+JOIN Objetos on id_objeto = id_item, 
+JOIN Alumnos ON ObjetosAlumnos.id_Alumno = Alumnos.id, 
+JOIN Cursos ON Objetos.id_curso = Cursos.id
+WHERE Alumnos.id = 1, Cursos.id = 1 cantidad < 0;
