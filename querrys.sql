@@ -104,8 +104,11 @@ id_objeto = 1
 11. Saber cuantos miembros hay en el curso
 */
 
-SELECT COUNT(Alumnos.id,Profesores.id)
-FROM Alumnos,Cursos,CursosAlumnos
+SELECT COUNT(DISTINCT CursosProfesores.id_Profesor) AS cantidad_profesores,
+    COUNT(DISTINCT CursosAlumnos.id_Alumno) AS cantidad_alumnos
+FROM Cursos c
+JOIN CursosProfesores CP ON c.id = CP.id_curso
+JOIN CursosAlumnos CA ON c.id = CA.id_curso
 where c.id = CursosAlumnos.id_Alumno && c.id = CursosProfesores.id_Profesor;
 
 /*
@@ -120,10 +123,17 @@ WHERE Alumnos.id = 1;
 */
 INSERT INTO CursosAlumnos(id_Alumno, id_curso)
 VALUES (1,1);
+/*
+14. Abrir cofre -> buscar alumno, curso e id_item = 2 (cofre) ,
+    cantidad - 1 y update
+*/
 
-
-
-
+UPDATE ObjetosAlumnos
+SET id_objeto = 2, cantidad = 0
+SET id_objeto = 201, cantidad = 1,
+SET id_objeto = 1, cantidad = 5
+JOIN Alumnos a ON a.id = ObjetosAlumnos.id_alumno
+WHERE  id_alumno = 1;
 /*
 15. Insert de los nuevos objetos que han tocado con las nuevas cantidades
 	2 monedas (update), id 56 piedra fuego cant(3), id 50 calabaza, 
@@ -141,3 +151,18 @@ VALUES (50, 1, 1);
 /*15.4*/
 INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
 VALUES (200, 1, 1);
+
+/*
+16. Ir al pueblo (200<=id<=500) mostrar todos los chibis
+*/
+
+SELECT id,
+FROM Objetos
+WHERE id BETWEEN 200 AND 500;
+
+/*
+17. Ver las softSkills, select sobre tabla evalua
+*/
+
+SELECT id, nombre, puntos
+FROM Softskill;
