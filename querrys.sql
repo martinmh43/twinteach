@@ -205,6 +205,11 @@ SET
 nota = 10
 WHERE nota = 0 AND id_alumno = 1, id_tarea = 1;
 
+/*
+23. Entregar recompensas -> insert en tabla inventario
+*/
+INSERT INTO ObjetosAlumnos (id_objeto, cantidad, id_Alumno)
+VALUES (3, 1, 1);
 
 /*
 24. consulta muetra los rankings (desplegable)
