@@ -144,3 +144,10 @@ WHERE  id_alumno = 1;
 SELECT id,
 FROM Objetos
 WHERE id BETWEEN 200 AND 500;
+
+/*
+17. Ver las softSkills, select sobre tabla evalua
+*/
+
+SELECT id, nombre, puntos
+FROM Softskill;
