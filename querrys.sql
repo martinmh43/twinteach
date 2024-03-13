@@ -135,3 +135,12 @@ SET id_objeto = 201, cantidad = 1,
 SET id_objeto = 1, cantidad = 5
 JOIN Alumnos a ON a.id = ObjetosAlumnos.id_alumno
 WHERE  id_alumno = 1;
+
+
+/*
+16. Ir al pueblo (200<=id<=500) mostrar todos los chibis
+*/
+
+SELECT id,
+FROM Objetos
+WHERE id BETWEEN 200 AND 500;
