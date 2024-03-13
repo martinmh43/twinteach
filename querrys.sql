@@ -175,3 +175,9 @@ INSERT INTO Softskill (nombre, fehca_envio, puntos, id_alumno_envia, id_alumno_r
 VALUES ('cooperación', 13-03-2024, 3, 1, 2, 1);
 
 
+/*
+20. Profesor -> administrar curso -> crea ranking nombre = ejercicioBBDD
+*/
+
+INSERT INTO Ranking (id, Nombre, fecha_creacion, id_curso)
+VALUES (1, 'El pepito', 13-03-2024, 1);
